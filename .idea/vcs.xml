@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/Discovery-Rewards" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Discovery-Rewards/AccountSystem/Vitality" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Vitality" vcs="Git" />
+  </component>
+</project>
