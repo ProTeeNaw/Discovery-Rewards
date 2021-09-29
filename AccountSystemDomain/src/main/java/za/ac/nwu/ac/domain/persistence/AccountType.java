@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "DEMO_ACCOUNT_TYPE", schema = "VITRSA_SANDBOX")
@@ -24,6 +25,17 @@ public class AccountType implements Serializable{
 
     @Column(name = "CREATION_DATE")
     private LocalDate creationDate;
+
+    /*@OneToMany(targetEntity = AccountTransaction.class. fetch = FetchType.LAZY, mappedBy = "accountType", orphanRemoval = true, cascade = CascadeType.PERSIST)
+    public Set<AccountTransaction> getAccountTransactions()
+    {
+        return accountTransactions;
+    }
+
+    public void setAccountTransactions(Set<AccountTransaction> accountTransactions)
+    {
+        this.setAcco
+    }*/
 
     public AccountType(Long accountTypeId, String mnemonic, String accountTypeName, LocalDate creationDate)
     {
