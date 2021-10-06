@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.Set;
 
 @Entity
-@Table(name = "DEMO_ACCOUNT_TYPE", schema = "VITRSA_SANDBOX")
+@Table(name = "MEMBERS", schema = "TINO")
 
 public class AccountType implements Serializable{
 
@@ -17,10 +17,10 @@ public class AccountType implements Serializable{
     @SequenceGenerator(name = "VIT_RSA_GENERIC_SEQ", sequenceName = "VITRSA_SANDBOX.VIT_RSA_GENERIC_SEQ", allocationSize = 1)
     @GeneratedValue(strategy =  GenerationType.SEQUENCE, generator = "VIT_RSA_GENERIC_SEQ")
 
-    @Column(name = "ACCOUNT_TYPE_ID")
+    @Column(name = "MEMBER_ID")
     private Long accountTypeId;
 
-    @Column(name = "MEMONIC")
+    @Column(name = "FIRSTNAME")
     private String accountTypeName;
 
     @Column(name = "CREATION_DATE")

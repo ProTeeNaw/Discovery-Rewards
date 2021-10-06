@@ -10,7 +10,7 @@ import javax.transaction.Transactional;
 @Component
 public class FetchAccountTypeFlowImpl implements FetchAccountTypeFlow {
 
-    private final AccountTypeTranslator accountTypeTranslator;
+    /*private final AccountTypeTranslator accountTypeTranslator;
 
     @Autowired
     public FetchAccountTypeFlowImpl(AccountTypeTranslator accountTypeTranslator)
@@ -22,5 +22,5 @@ public class FetchAccountTypeFlowImpl implements FetchAccountTypeFlow {
     public List<AccountTypeDto> getAllAccountTypes()
     {
 
-    }
+    }*/
 }
