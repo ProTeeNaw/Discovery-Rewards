@@ -43,6 +43,14 @@
                 <groupId>io.swagger</groupId>
                 <artifactId>swagger-annotations</artifactId>
             </dependency>
+            <!-- https://mvnrepository.com/artifact/org.jacoco/jacoco-maven-plugin -->
+            <dependency>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.7</version>
+                <scope>test</scope>
+            </dependency>
+
             <dependency>
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-bean-validators</artifactId>

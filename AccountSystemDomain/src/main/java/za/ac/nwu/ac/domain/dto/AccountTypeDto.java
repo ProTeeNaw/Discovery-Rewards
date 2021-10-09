@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.jetbrains.annotations.NotNull;
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Getter
@@ -45,6 +46,13 @@ public class AccountTypeDto {
     @Column(name = "health_Fitness")
     @NotNull
     private Long health_Fitness;
+
+    public AccountTypeDto(String miles, String miles_account_type, LocalDate parse) {
+    }
+
+    public AccountTypeDto() {
+
+    }
 
     public void performQuery(long l) {
     }

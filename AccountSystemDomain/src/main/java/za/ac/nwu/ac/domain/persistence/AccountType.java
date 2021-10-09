@@ -1,52 +1,38 @@
 package za.ac.nwu.ac.domain.persistence;
 
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
-import java.util.Set;
 
 @Entity
-@Table(name = "MEMBERS", schema = "TINO")
+@Table(name = "MEMBERS")
 
 public class AccountType implements Serializable{
 
     private static final long serialVersionID = 514548148148487871L;
 
     @Id
-    @SequenceGenerator(name = "VIT_RSA_GENERIC_SEQ", sequenceName = "VITRSA_SANDBOX.VIT_RSA_GENERIC_SEQ", allocationSize = 1)
-    @GeneratedValue(strategy =  GenerationType.SEQUENCE, generator = "VIT_RSA_GENERIC_SEQ")
-
     @Column(name = "MEMBER_ID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long accountTypeId;
 
     @Column(name = "FIRSTNAME")
     private String accountTypeName;
 
-    @Column(name = "CREATION_DATE")
-    private LocalDate creationDate;
-
-    /*@OneToMany(targetEntity = AccountTransaction.class. fetch = FetchType.LAZY, mappedBy = "accountType", orphanRemoval = true, cascade = CascadeType.PERSIST)
-    public Set<AccountTransaction> getAccountTransactions()
-    {
-        return accountTransactions;
-    }
-
-    public void setAccountTransactions(Set<AccountTransaction> accountTransactions)
-    {
-        this.setAcco
-    }*/
-
-    public AccountType(Long accountTypeId, String mnemonic, String accountTypeName, LocalDate creationDate)
-    {
-        this.accountTypeId = accountTypeId;
-        this.accountTypeName = accountTypeName;
-        this.creationDate = creationDate;
-    }
+    @Column(name = "START_DATE")
+    private LocalDate startDate;
 
     public AccountType()
     {
 
+    }
+
+    public AccountType(Long accountTypeId, String accountTypeName, LocalDate startDate) {
+        this.accountTypeId = accountTypeId;
+        this.accountTypeName = accountTypeName;
+        this.startDate = startDate;
     }
 
     public Long getAccountTypeId() {
@@ -65,12 +51,12 @@ public class AccountType implements Serializable{
         this.accountTypeName = accountTypeName;
     }
 
-    public LocalDate getCreationDate() {
-        return creationDate;
+    public LocalDate getStartDate() {
+        return startDate;
     }
 
-    public void setCreationDate(LocalDate creationDate) {
-        this.creationDate = creationDate;
+    public void setStartDate(LocalDate startDate) {
+        this.startDate = startDate;
     }
 
     @Override
@@ -78,12 +64,12 @@ public class AccountType implements Serializable{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         AccountType that = (AccountType) o;
-        return Objects.equals(accountTypeId, that.accountTypeId) && Objects.equals(accountTypeName, that.accountTypeName) && Objects.equals(creationDate, that.creationDate);
+        return Objects.equals(accountTypeId, that.accountTypeId) && Objects.equals(accountTypeName, that.accountTypeName) && Objects.equals(startDate, that.startDate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(accountTypeId, accountTypeName, creationDate);
+        return Objects.hash(accountTypeId, accountTypeName, startDate);
     }
 
     @Override
@@ -91,7 +77,9 @@ public class AccountType implements Serializable{
         return "AccountType{" +
                 "accountTypeId=" + accountTypeId +
                 ", accountTypeName='" + accountTypeName + '\'' +
-                ", creationDate=" + creationDate +
+                ", startDate=" + startDate +
                 '}';
     }
+
+
 }

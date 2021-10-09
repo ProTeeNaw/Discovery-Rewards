@@ -9,6 +9,10 @@ import javax.transaction.Transactional;
 @Transactional
 @Component
 public class FetchAccountTypeFlowImpl implements FetchAccountTypeFlow {
+    @Override
+    public Object getAllAccountTypes() {
+        return null;
+    }
 
     /*private final AccountTypeTranslator accountTypeTranslator;
 
